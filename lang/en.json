@@ -1,0 +1,17 @@
+{
+  "summed-up-damage-rolls": {
+    "fulfillment": {
+      "label": "Summed Manual Dice"
+    },
+    "resolver": {
+      "toggle": "Sum Up Dice",
+      "toggleHint": "Enter one completed sum for each dice pool",
+      "sumLabel": "Dice sum ({min}–{max})",
+      "sumInfo": "Enter the completed result of this dice pool, excluding formula bonuses.",
+      "rerollWarning": "This roll has reroll rules. Enter the total after physical rerolls; Foundry will not apply them again.",
+      "unsupported": "This dice term cannot be summed safely. Individual dice entry remains active.",
+      "manualInput": "This die type uses Manual Input and remains in individual-die mode.",
+      "manualSum": "Manual sum: {total}"
+    }
+  }
+}

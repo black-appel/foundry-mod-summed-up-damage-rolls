@@ -1,0 +1,17 @@
+{
+  "summed-up-damage-rolls": {
+    "fulfillment": {
+      "label": "Manuelle Würfelsumme"
+    },
+    "resolver": {
+      "toggle": "Sum Up Dice",
+      "toggleHint": "Würfel eines Pools als fertige Summe eingeben",
+      "sumLabel": "Würfelsumme ({min}–{max})",
+      "sumInfo": "Erwartet wird das Gesamtergebnis dieses Würfelpools ohne Formelboni.",
+      "rerollWarning": "Für diesen Wurf gelten Reroll-Regeln. Gib die Summe nach den echten Rerolls ein; Foundry führt sie nicht erneut aus.",
+      "unsupported": "Für diesen Würfelterm ist keine sichere Summeneingabe möglich. Es bleibt die Einzelwürfel-Eingabe aktiv.",
+      "manualInput": "Dieser Würfeltyp ist auf „Manual Input“ eingestellt und bleibt bei der Einzelwürfel-Eingabe.",
+      "manualSum": "Manuelle Summe: {total}"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<section class="flexcol standard-form">
+    <p class="formula">{{ formula }}</p>
+
+    {{#if sumUp.available}}
+    <button type="button" class="sum-up-toggle" data-sum-up-toggle role="switch"
+            aria-checked="{{#if sumUp.active}}true{{else}}false{{/if}}"
+            data-tooltip aria-label="{{ sumUp.toggleHint }}">
+        <span class="sum-up-toggle-track" aria-hidden="true"><span class="sum-up-toggle-thumb"></span></span>
+        <span>{{ sumUp.toggle }}</span>
+    </button>
+    {{/if}}
+
+    {{#each groups}}
+    <fieldset class="input-grid" data-term-id="{{ @key }}" data-sum-supported="{{#if sum.supported}}true{{else}}false{{/if}}">
+        <legend>{{ label }} <span data-tooltip aria-label="{{ tooltip }}">{{{ icon }}}</span></legend>
+
+        {{#if sum.supported}}
+        <div class="sum-up-panel">
+            <p class="sum-up-info">{{ sum.info }}</p>
+            {{#if sum.specialRuleWarning}}<p class="sum-up-rule-warning">{{ sum.specialRuleWarning }}</p>{{/if}}
+            <label class="sum-up-input">
+                <span>{{ sum.label }}</span>
+                <input type="number" name="{{ @key }}" min="{{ sum.min }}" max="{{ sum.max }}" step="1"
+                       data-sum-input="{{ @key }}" disabled>
+            </label>
+        </div>
+        {{else}}
+        <p class="sum-up-unsupported">{{ sum.unsupported }}</p>
+        {{/if}}
+
+        <div class="individual-results">
+            {{#each results}}
+            <label class="icon die-input {{#if isNew}}new-addition{{/if}}" data-denomination="{{ denomination }}"
+                   data-method="{{ method }}">
+                {{ numberInput value min=minValue max=maxValue step=1 name=id readonly=readonly
+                               placeholder=denomination disabled=disabled autofocus=true }}
+                {{#if rerolled}}<i class="fa-solid fa-arrow-rotate-right"></i>{{/if}}
+                {{#if exploded}}<i class="fa-solid fa-burst"></i>{{/if}}
+                {{{ icon }}}
+            </label>
+            {{/each}}
+        </div>
+    </fieldset>
+    {{/each}}
+
+    <footer class="form-footer">
+        <button type="submit">
+            <i class="fa-solid fa-check" inert></i>
+            {{ localize "DICE.SubmitRollPl" }}
+        </button>
+    </footer>
+</section>
